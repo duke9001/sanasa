@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTransactionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTransactionLabel_transactionId}"/>
+                    <h:outputText value="#{transactionController.selected.transactionId}" title="#{bundle.ViewTransactionTitle_transactionId}"/>
+                    <h:outputText value="#{bundle.ViewTransactionLabel_deposit}"/>
+                    <h:outputText value="#{transactionController.selected.deposit}" title="#{bundle.ViewTransactionTitle_deposit}"/>
+                    <h:outputText value="#{bundle.ViewTransactionLabel_balance}"/>
+                    <h:outputText value="#{transactionController.selected.balance}" title="#{bundle.ViewTransactionTitle_balance}"/>
+                    <h:outputText value="#{bundle.ViewTransactionLabel_date}"/>
+                    <h:outputText value="#{transactionController.selected.date}" title="#{bundle.ViewTransactionTitle_date}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTransactionLabel_recieptNumber}"/>
+                    <h:outputText value="#{transactionController.selected.recieptNumber}" title="#{bundle.ViewTransactionTitle_recieptNumber}"/>
+                    <h:outputText value="#{bundle.ViewTransactionLabel_staffId}"/>
+                    <h:outputText value="#{transactionController.selected.staffId}" title="#{bundle.ViewTransactionTitle_staffId}"/>
+                    <h:outputText value="#{bundle.ViewTransactionLabel_accountNumber}"/>
+                    <h:outputText value="#{transactionController.selected.accountNumber}" title="#{bundle.ViewTransactionTitle_accountNumber}"/>
+                </h:panelGrid>
+                
+              
+                
+                <br />
+                <h:commandLink action="#{transactionController.prepareList}" value="#{bundle.ViewTransactionShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTransactionIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
