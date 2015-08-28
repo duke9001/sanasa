@@ -14,6 +14,7 @@ DESKTOP FUNCTIONS
 2.edit user details
 3.delete user 
 4.add user payment details.
+5.admin can add staff member / delete member / update
 
 Technologies used
 --------------------------
